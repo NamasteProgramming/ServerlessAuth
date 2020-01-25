@@ -1,0 +1,21 @@
+{
+  "name": "serverlessauth",
+  "version": "1.0.0",
+  "description": "",
+  "main": "config.js",
+  "dependencies": {
+    "lambda-api": "^0.10.4",
+    "mongoose": "^5.8.9"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "github_as_ravindra:NamasteProgramming/ServerlessAuth.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

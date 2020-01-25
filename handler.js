@@ -1,29 +1,18 @@
 "use strict";
-const mongoose = require("mongoose");
-const { MONGO_CONNECTION_STRING } = require('./config')
+// const mongoose = require("mongoose");
+// const { MONGO_CONNECTION_STRING } = require('./config')
 
-module.exports.hello = async event => {
-    const mongoose = require("mongoose");
-    mongoose.connect(MONGO_CONNECTION_STRING, { useNewUrlParser: true });
+const api = require("lambda-api")();
 
-    // Model == Table Structure
-    const Cat = mongoose.model("Cat", { name: String });
+// Define a route
+api.get("/", async (req, res) => {
+    return { status: "ok" };
+});
 
-    // Create an object
-    const kitty = new Cat({ name: "Kitty" });
-    await kitty.save();
-    return {
-        statusCode: 200,
-        body: JSON.stringify(
-            {
-                message: "Go Serverless v1.0! Your function executed successfully!",
-                kitty
-            },
-            null,
-            2
-        )
-    };
+api.get("/user", async (req, res) => {
+    return { status: "Hi, this is from user endpoint" };
+});
 
-    // Use this code if you don't use the http event with the LAMBDA-PROXY integration
-    // return { message: 'Go Serverless v1.0! Your function executed successfully!', event };
+module.exports.hello = async (event, context) => {
+    return await api.run(event, context);
 };
