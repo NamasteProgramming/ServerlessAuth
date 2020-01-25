@@ -4,6 +4,7 @@
   "description": "",
   "main": "config.js",
   "dependencies": {
+    "bcrypt": "^3.0.7",
     "lambda-api": "^0.10.4",
     "mongoose": "^5.8.9"
   },
